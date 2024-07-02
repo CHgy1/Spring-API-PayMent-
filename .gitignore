@@ -1,0 +1,20 @@
+# Created by https://www.toptal.com/developers/gitignore/api/eclipse,react
+# Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,react
+
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+# Ignore application.properties
+application.properties
+### Eclipse Patch ###
+# Spring Boot Tooling
+.sts4-cache/
