@@ -1,7 +1,5 @@
 package com.spring.user.entity;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -11,7 +9,7 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+@Entity	
 @Getter
 @Setter
 public class UserEntity {
@@ -28,6 +26,8 @@ public class UserEntity {
 	private String nickname;
 	
 	private String registonDate;
+	
+	private String address;
 	
 	@Enumerated(EnumType.STRING)
     private Role role = Role.ROLE_USER; 
