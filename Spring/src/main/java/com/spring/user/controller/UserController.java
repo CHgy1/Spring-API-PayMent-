@@ -1,4 +1,4 @@
-package com.spring.controller;
+package com.spring.user.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring.entity.UserEntity;
-import com.spring.service.UserService;
+import com.spring.user.entity.UserEntity;
+import com.spring.user.service.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

@@ -1,4 +1,4 @@
-package com.spring.service;
+package com.spring.user.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.spring.entity.UserEntity;
-import com.spring.repository.UserRepository;
+import com.spring.user.entity.UserEntity;
+import com.spring.user.repository.UserRepository;
 
 @Service
 public class UserService {

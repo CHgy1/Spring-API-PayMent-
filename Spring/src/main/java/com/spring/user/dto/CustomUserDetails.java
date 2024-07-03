@@ -1,4 +1,4 @@
-package com.spring.dto;
+package com.spring.user.dto;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,8 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.spring.entity.Role;
-import com.spring.entity.UserEntity;
+import com.spring.user.entity.Role;
+import com.spring.user.entity.UserEntity;
 
 public class CustomUserDetails implements UserDetails{
 

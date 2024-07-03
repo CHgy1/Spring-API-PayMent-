@@ -24,11 +24,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.spring.entity.Role;
-import com.spring.entity.UserEntity;
-import com.spring.jwt.JwtUtil;
-import com.spring.service.CustomUserDetailsService;
-import com.spring.service.UserService;
+import com.spring.user.controller.UserController;
+import com.spring.user.entity.Role;
+import com.spring.user.entity.UserEntity;
+import com.spring.user.jwt.JwtUtil;
+import com.spring.user.service.CustomUserDetailsService;
+import com.spring.user.service.UserService;
 
 @ExtendWith(RestDocumentationExtension.class)
 @WebMvcTest(UserController.class)

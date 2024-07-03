@@ -1,4 +1,4 @@
-package com.spring.entity;
+package com.spring.user.entity;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

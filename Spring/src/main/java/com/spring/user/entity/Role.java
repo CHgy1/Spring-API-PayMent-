@@ -1,4 +1,4 @@
-package com.spring.entity;
+package com.spring.user.entity;
 
 public enum Role {
     ROLE_USER,

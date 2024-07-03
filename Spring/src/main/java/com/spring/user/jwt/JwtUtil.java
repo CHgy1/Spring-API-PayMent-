@@ -1,4 +1,4 @@
-package com.spring.jwt;
+package com.spring.user.jwt;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;

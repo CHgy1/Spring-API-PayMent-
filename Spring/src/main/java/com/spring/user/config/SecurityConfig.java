@@ -1,4 +1,4 @@
-package com.spring.config;
+package com.spring.user.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,10 +13,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.spring.jwt.JwtFilter;
-import com.spring.jwt.JwtUtil;
-import com.spring.jwt.LoginFilter;
-import com.spring.service.CustomUserDetailsService;
+import com.spring.user.jwt.JwtFilter;
+import com.spring.user.jwt.JwtUtil;
+import com.spring.user.jwt.LoginFilter;
+import com.spring.user.service.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

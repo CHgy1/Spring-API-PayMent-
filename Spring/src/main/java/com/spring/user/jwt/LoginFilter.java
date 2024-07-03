@@ -1,4 +1,4 @@
-package com.spring.jwt;
+package com.spring.user.jwt;
 
 import java.util.Collection;
 import java.util.Iterator;

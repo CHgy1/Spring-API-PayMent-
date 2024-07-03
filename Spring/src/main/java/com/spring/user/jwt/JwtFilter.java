@@ -1,4 +1,4 @@
-package com.spring.jwt;
+package com.spring.user.jwt;
 
 import java.io.IOException;
 
@@ -7,9 +7,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.spring.dto.CustomUserDetails;
-import com.spring.entity.Role;
-import com.spring.entity.UserEntity;
+import com.spring.user.dto.CustomUserDetails;
+import com.spring.user.entity.Role;
+import com.spring.user.entity.UserEntity;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

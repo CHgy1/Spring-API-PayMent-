@@ -1,4 +1,4 @@
-package com.spring.service;
+package com.spring.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,9 +6,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.spring.dto.CustomUserDetails;
-import com.spring.entity.UserEntity;
-import com.spring.repository.UserRepository;
+import com.spring.user.dto.CustomUserDetails;
+import com.spring.user.entity.UserEntity;
+import com.spring.user.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService{
