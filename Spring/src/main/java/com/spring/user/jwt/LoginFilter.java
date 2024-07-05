@@ -1,5 +1,6 @@
 package com.spring.user.jwt;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -11,6 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -35,7 +37,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter{
 	}
 	
 	@Override
-    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) {
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication)throws IOException, ServletException {
 
 
         String username = authentication.getName();
@@ -46,11 +48,12 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter{
 
         String role = auth.getAuthority();
 
-
+        System.out.println("시간 : " + 10L);
         String token = jwtUtil.createJwt(username, role, 60*60*10L);
-        
         System.out.println(" success " + token);
-        response.addHeader("Authorization", "Bearer " + token);
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("{\"token\": \"" + token + "\"}");
     }
 	
     @Override

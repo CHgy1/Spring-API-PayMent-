@@ -27,9 +27,9 @@ public class ProductInOrder {
     private Order order;
 
     // 상품 ID
-    @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+//    @ManyToOne
+//    @JoinColumn(name = "product_id", nullable = false)
+//    private Product product;
 
     // 수량
     @Column(nullable = false)
