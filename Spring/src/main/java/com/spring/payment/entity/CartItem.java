@@ -1,6 +1,8 @@
 package com.spring.payment.entity;
 
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,26 +14,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "products_in_order")
 @Getter
 @Setter
-public class ProductInOrder {
-
+@Table(name = "cartItem")
+public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // 주문 ID
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
-    private Order order;
+    @JoinColumn(name = "cart_id")
+    @JsonBackReference
+    private Cart cart;
 
-    // 상품 ID
-//    @ManyToOne
-//    @JoinColumn(name = "product_id", nullable = false)
-//    private Product product;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @JsonManagedReference
+    private Product product;
 
-    // 수량
-    @Column(nullable = false)
-    private int quantity;
+    private Integer quantity;
+
+    // Getters and Setters
 }
