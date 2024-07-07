@@ -38,6 +38,7 @@ public class SecurityConfig implements WebMvcConfigurer{
 		return configuration.getAuthenticationManager();
 	}
 
+	
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -61,7 +62,7 @@ public class SecurityConfig implements WebMvcConfigurer{
         // 요청 권한 설정
         http
                 .authorizeHttpRequests((auth) -> auth
-                		.requestMatchers("/login", "/", "/register", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll() // 로그인, 루트, 회원가입 경로는 모두 접근 허용
+                		.requestMatchers("/login", "/", "/register", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/cart","/**").permitAll() // 로그인, 루트, 회원가입 경로는 모두 접근 허용
                         .requestMatchers("/admin").hasRole("ADMIN") // /admin 경로는 ADMIN 역할을 가진 사용자만 접근 허용
                         .anyRequest().authenticated()); // 그 외의 모든 요청은 인증 필요
 
