@@ -1,5 +1,6 @@
 package com.spring.payment.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -31,10 +32,14 @@ public class Cart {
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private UserEntity user;
-
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    
+    /*
+    orphanRemoval = true를 추가하면 엔티티 관계에서 부모 엔티티가 
+    자식 엔티티를 삭제할 때 자식 엔티티도 자동으로 데이터베이스에서 삭제되도록 설정됩니다
+    */
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<CartItem> cartItems;
+    private List<CartItem> cartItems = new ArrayList<>(); // 필드 초기화
 }
 
 

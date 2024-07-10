@@ -1,7 +1,5 @@
 package com.spring.payment.request;
 
-import com.spring.user.entity.UserEntity;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

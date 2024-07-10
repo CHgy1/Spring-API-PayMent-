@@ -1,6 +1,7 @@
 package com.spring.payment.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,12 @@ public class CartController {
 
     @PostMapping("/add")
     public ResponseEntity<?> addToCart(@RequestBody AddToCartRequest addToCartRequest, @RequestHeader("Authorization") String token) {
+    	try {
         cartService.addToCart(addToCartRequest, token);
         return ResponseEntity.ok("Product added to cart successfully!");
+    	} catch (RuntimeException e) {
+    		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    	}
     }
 
     @GetMapping
@@ -30,5 +35,13 @@ public class CartController {
     public ResponseEntity<?> clearCart(@RequestHeader("Authorization") String token) {
         cartService.clearCart(token);
         return ResponseEntity.ok("Cart cleared successfully!");
+    }
+    
+    // 예외 핸들러 분리예정
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleException(Exception e) {
+        return ResponseEntity.status(
+        		HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage()
+        		);
     }
 }
