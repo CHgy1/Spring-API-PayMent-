@@ -1,6 +1,5 @@
-package com.spring.user.dto;
+package com.spring.dto;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -9,34 +8,33 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.spring.user.entity.Role;
-import com.spring.user.entity.UserEntity;
+import com.spring.payment.domain.User;
+import com.spring.payment.eum.Role;
+
 
 public class CustomUserDetails implements UserDetails{
 
 	@Autowired
-	private UserEntity userEntity;
+	private User user;
 	
-	public CustomUserDetails(UserEntity userEntity) {
-		this.userEntity = userEntity;
+	public CustomUserDetails(User user) {
+		this.user = user;
 	}
-
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		Role role = userEntity.getRole();
-        return Collections.singleton(new SimpleGrantedAuthority(role.name()));
+		Role role = user.getRole();
+		return Collections.singleton(new SimpleGrantedAuthority(role.name()));
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
-		return userEntity.getPassword();
+		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return userEntity.getUsername();
+		return user.getEmail();
 	}
 
 	@Override

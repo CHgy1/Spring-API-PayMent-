@@ -1,4 +1,4 @@
-package com.spring.payment.request;
+package com.spring.payment.response;
 
 import java.util.List;
 
@@ -10,25 +10,21 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Schema(description = "Product request DTO")
-public class ProductRequest {
-
-	
+@Schema(description = "Product response DTO")
+public class ProductResponse {
 	private Long id;
 	
-
 	private String productName;
-
 	private Double price;
 	
-
 	private String description;
 	
-
 	private Integer stock;
 	
+	private String created_at;
 	
-	private List<String> deleteImages; // 이미지 파일 리스트
+	private List<String> images;
 	
-	private User user;
+	private User users;
+
 }
