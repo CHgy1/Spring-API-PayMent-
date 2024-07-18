@@ -46,11 +46,12 @@ public class ProductController {
     }
      
     // 제품 수정 엔드포인트
-    @PutMapping(value = "/update", consumes = {"multipart/form-data"})
+    @PutMapping(value = "/update/{id}", consumes = {"multipart/form-data"})
     public ResponseEntity<ProductResponse> updateProduct(
             @RequestPart("product") ProductRequest productRequest,
-            @RequestPart("images") List<MultipartFile> images,
+            @RequestPart(value = "images", required = false) List<MultipartFile> images,
             @RequestHeader("Authorization") String token) {
+        System.out.println("실행");
         ProductResponse response = productService.updateProduct(productRequest, images, token);
         return ResponseEntity.ok(response);
     }
