@@ -20,6 +20,7 @@ public class OrderController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createOrder(@RequestHeader("Authorization") String token) {
+    	System.out.println("Order create 주문  : " + token);
         try {
             orderService.createOrder(token);
             return ResponseEntity.ok("주문 성공");

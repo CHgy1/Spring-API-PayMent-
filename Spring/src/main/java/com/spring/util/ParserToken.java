@@ -16,7 +16,9 @@ public class ParserToken {
 	private JwtUtil jwtUtil;
 	
 	public User conversionToToken(String token) {
+		System.out.println(token);
    	 User user = userRepository.findByEmail(jwtUtil.getEmail(token.substring(7)));
+   	 System.out.println("ParserToken Username : " + user.getEmail());
    	 if (user == null) {
    		 throw new RuntimeException("잘못된 정보 입니다.");
    	 }
